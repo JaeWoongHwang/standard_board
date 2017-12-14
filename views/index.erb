@@ -1,0 +1,15 @@
+<h2>Free board<h2>
+<a href = "/new">WRITE</a>
+
+<% @posts.each do |post| %>
+  <p>
+    <%= post.id %>
+    <%= post.title %>
+    <%= post.content %>
+    <%= post.author %>
+    <%= post.created_at %>
+    <!-- 글 삭제 , 수정 기능을 Varialbe routing을 이용 -->
+    <a href = "/destroy/<%=post.id%>">DELETE</a>
+    <a href = "/edit/<%=post.id%>">EDIT</a>
+  </p>
+<% end %>
